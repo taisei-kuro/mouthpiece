@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "482518100871",
+    "project_id": "mouthpiece-dev-44600",
+    "storage_bucket": "mouthpiece-dev-44600.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482518100871:android:236e535ac4a72c5e704122",
+        "android_client_info": {
+          "package_name": "com.example.mouthpiece"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482518100871-7g7vnfhpqsi32n8jcuj94ulctk6faspe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKgRqj47AMdQZrxJYWfZSQqMEwSpgXJVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482518100871-7g7vnfhpqsi32n8jcuj94ulctk6faspe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
