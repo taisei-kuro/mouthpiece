@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mouthpiece/const/const.dart';
@@ -31,7 +30,7 @@ class _PhotoListPageState extends State<PhotoListPage> {
 
     if (photoList == null || isLoading) {
       return const Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.grey,
         body: Center(
           child: CircularProgressIndicator(),
         ),
@@ -39,23 +38,9 @@ class _PhotoListPageState extends State<PhotoListPage> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
         foregroundColor: Const.mainBlueColor,
-        actions: [
-          IconButton(
-            onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => SlideShowPage(photoList: photoList),
-              //   ),
-              // );
-            },
-            icon: const Icon(Icons.slideshow),
-          )
-        ],
       ),
       body: PhotoListBody(
         photoList: photoList,

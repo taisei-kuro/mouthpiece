@@ -32,7 +32,7 @@ class PhotoListBody extends StatelessWidget {
             onTap: onTapAdd,
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.9),
+                color: Colors.black.withOpacity(0.1),
                 border: Border.all(
                   color: Const.mainBlueColor,
                   width: 3,
@@ -65,7 +65,7 @@ class PhotoListBody extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(2),
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.9),
+                      color: Colors.black.withOpacity(0.1),
                       border: Border.all(
                         color: Const.mainBlueColor,
                         width: 1,

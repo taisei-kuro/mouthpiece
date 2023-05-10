@@ -1,14 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:mouthpiece/const/const.dart';
 import 'package:mouthpiece/firebase_options.dart';
 import 'package:mouthpiece/presentation/home_page.dart';
-import 'package:mouthpiece/presentation/set_reason_page.dart';
 import 'package:mouthpiece/repository/auth_repository.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  initializeDateFormatting('ja');
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

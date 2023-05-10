@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mouthpiece/const/const.dart';
 import 'package:mouthpiece/domain/project.dart';
+import 'package:mouthpiece/presentation/photo_list_page.dart';
 import 'package:mouthpiece/presentation/set_reason_page.dart';
 import 'package:mouthpiece/repository/auth_repository.dart';
 import 'package:mouthpiece/repository/image_repository.dart';
@@ -17,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   final repo = ProjectRepository();
   final authRepo = AuthRepository();
   final imageRepo = ImageRepository();
+
   Project? project;
 
   Future<void> init() async {
@@ -45,7 +47,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final project = this.project;
-
     if (project == null) {
       return const Scaffold(
         backgroundColor: Colors.grey,
@@ -80,17 +81,73 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  onPressed: () async {},
+                  onPressed: () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PhotoListPage(),
+                      ),
+                    );
+                  },
                 ),
                 const SizedBox(width: 8),
               ],
             ),
-            body: SingleChildScrollView(
-                child: Column(
-              children: [
-                Text(project.reason!),
-              ],
-            )),
+            body: Center(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 150,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Const.mainBlueColor,
+                          width: 3,
+                        ),
+                      ),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                const Text(
+                                  '理由：',
+                                  style: TextStyle(fontSize: 25),
+                                ),
+                                Flexible(
+                                  child: Text(
+                                    project.reason!,
+                                    style: const TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                const Text(
+                                  '日数：',
+                                  style: TextStyle(fontSize: 25),
+                                ),
+                                Text(
+                                  '${project.currentElapsedDays}日 / ${project.quantity! * 7} 日',
+                                  style: const TextStyle(fontSize: 20),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         )
       ],
