@@ -145,14 +145,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.8"
-  ed_screen_recorder:
-    dependency: "direct main"
-    description:
-      name: ed_screen_recorder
-      sha256: ac41454ddf453115de011423fffa50da4bc0b83ce7452f83044f30436a6b9d57
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.13"
   fake_async:
     dependency: transitive
     description:
