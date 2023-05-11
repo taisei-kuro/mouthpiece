@@ -25,7 +25,7 @@ class SettingMenuItem extends StatelessWidget {
               color: Const.mainBlueColor,
               width: 3,
             ),
-            backgroundColor: Colors.black,
+            backgroundColor: Colors.white,
           ),
           child: Text(
             label,

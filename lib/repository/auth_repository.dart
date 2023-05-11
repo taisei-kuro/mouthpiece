@@ -3,24 +3,18 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 
 class AuthRepository {
-  bool isLogin = FirebaseAuth.instance.currentUser?.uid != null;
-
   String get userId {
     final uid = FirebaseAuth.instance.currentUser?.uid;
-    // assert(uid != null, 'currentUserがnullです');
     return uid!;
   }
 
   Future<void> signInAnonymously() async {
     final firebaseAuthInstance = FirebaseAuth.instance;
-
-    // ログインされていない場合（currentUserがnullの場合）、匿名認証を行う
     User? currentUser = firebaseAuthInstance.currentUser;
     if (currentUser == null) {
       try {
         // 匿名認証
         final userCredential = await firebaseAuthInstance.signInAnonymously();
-
         // firestoreにUserを登録する
         final user = userCredential.user;
         if (user != null) {
@@ -39,11 +33,9 @@ class AuthRepository {
     }
   }
 
-  Future logout() async {
-    await FirebaseAuth.instance.signOut();
-  }
-
   Future deleteUser() async {
+    final uid = userId;
+    await FirebaseFirestore.instance.collection('users').doc(uid).delete();
     await FirebaseAuth.instance.currentUser?.delete();
   }
 

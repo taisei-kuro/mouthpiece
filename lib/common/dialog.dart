@@ -72,3 +72,30 @@ class YesNoDialog extends StatelessWidget {
     );
   }
 }
+
+class OKDialog extends StatelessWidget {
+  const OKDialog({
+    required this.title,
+    this.content,
+    required this.onPressedOK,
+    Key? key,
+  }) : super(key: key);
+
+  final String title;
+  final Widget? content;
+  final VoidCallback onPressedOK;
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text(title),
+      content: content,
+      actions: [
+        DialogActionsTextButton(
+          buttonText: 'OK',
+          onPressed: onPressedOK,
+        ),
+      ],
+    );
+  }
+}

@@ -31,8 +31,6 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  // bool isLogin = AuthRepository().isLogin;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -60,7 +58,7 @@ class _AppState extends State<App> {
                 width: 3,
               ),
             ),
-            backgroundColor: Colors.black,
+            backgroundColor: Colors.white,
             titleTextStyle: TextStyle(
               fontFamily: Const.fontFamily,
               color: Const.mainBlueColor,

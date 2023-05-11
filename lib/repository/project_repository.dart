@@ -64,20 +64,4 @@ class ProjectRepository {
       },
     );
   }
-
-  Future setMeasure(String measure, int elapsedDays) async {
-    final projectId = await fetchNewestProjectDocumentId();
-    final docRef = FirebaseFirestore.instance;
-    await docRef
-        .collection('users')
-        .doc(uid)
-        .collection('projects')
-        .doc(projectId)
-        .update(
-      {
-        'measure': measure,
-        'elapsedDays': elapsedDays,
-      },
-    );
-  }
 }
