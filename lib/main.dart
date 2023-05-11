@@ -31,7 +31,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  bool isLogin = AuthRepository().isLogin;
+  // bool isLogin = AuthRepository().isLogin;
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +72,6 @@ class _AppState extends State<App> {
             ),
           ),
         ),
-        home: isLogin ? const HomePage() : const HomePage());
+        home: const HomePage());
   }
 }

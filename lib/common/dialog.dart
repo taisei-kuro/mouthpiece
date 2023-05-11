@@ -7,11 +7,11 @@ class ErrorDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text("エラー"),
+      title: const Text('エラー'),
       content: Text(errorMessage),
       actions: [
         DialogActionsTextButton(
-          buttonText: "閉じる",
+          buttonText: '閉じる',
           onPressed: () => Navigator.pop(context),
         ),
       ],

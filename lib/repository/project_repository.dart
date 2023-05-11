@@ -5,16 +5,7 @@ import 'package:mouthpiece/repository/auth_repository.dart';
 import 'package:uuid/uuid.dart';
 
 class ProjectRepository {
-  // 当初は、「final String uid = AuthRepository().userId」としていたが、以下経緯によりget関数に変更したもの
-  // 「final String uid = AuthRepository().userId」の場合、
-  // アプリ初回起動時のSetGoalPageでProjectRepositoryをインスタンス化した際、
-  // ProjectRepositoryのインスタンス変数でAuthRepository.userIdを呼び出すことになるが、
-  // 初回起動時のこのタイミングでは匿名認証前のため、AuthRepositoryのuserIdメソッドでuidにnullが入りassertが発動する
-  // get関数にすることで、userIdを使う時にしか呼び出されなくなる (＝アプリ初回起動時のSetGoalPageでProjectRepositoryをインスタンス化した際には呼び出されない）
-  // ため、uidにnullが入ることを回避できる
-  // 参考 → https://github.com/flutteruniv/obi-wan/pull/111#discussion_r1111669512
   String get uid => AuthRepository().userId;
-
   Future<Project> fetchProject() async {
     final docRef = FirebaseFirestore.instance
         .collection('users')

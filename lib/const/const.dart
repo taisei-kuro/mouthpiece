@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Const {
-  static const contactFormURL = 'https://forms.gle/XjuN1X84EzwtebDG8';
-  static const privacyPolicyURL =
-      'https://www.kiyac.app/privacypolicy/f02BDdDeZZzb3shsvhKO';
-  static const termURL =
-      'https://www.kiyac.app/termsOfService/9uMlQL9LkHhLq0Izhn6U';
-
   static const Color mainBlueColor = Color(_bluePrimaryValue);
   static const int _bluePrimaryValue = 0xFF2196F3;
 
@@ -26,5 +20,5 @@ class Const {
     },
   );
 
-  static const fontFamily = 'NotoSerifJP';
+  static const fontFamily = 'OntoSerifJP';
 }

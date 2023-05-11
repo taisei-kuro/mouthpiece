@@ -3,6 +3,7 @@ import 'package:mouthpiece/const/const.dart';
 import 'package:mouthpiece/domain/project.dart';
 import 'package:mouthpiece/presentation/photo_list_page.dart';
 import 'package:mouthpiece/presentation/set_reason_page.dart';
+import 'package:mouthpiece/presentation/setting_page.dart';
 import 'package:mouthpiece/repository/auth_repository.dart';
 import 'package:mouthpiece/repository/image_repository.dart';
 import 'package:mouthpiece/repository/project_repository.dart';
@@ -70,7 +71,14 @@ class _HomePageState extends State<HomePage> {
                   Icons.settings,
                   color: Const.mainBlueColor,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SettingPage(),
+                    ),
+                  );
+                },
               ),
               actions: [
                 TextButton.icon(

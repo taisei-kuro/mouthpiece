@@ -104,9 +104,10 @@ class _SetQuantityPageState extends State<SetQuantityPage> {
                   quantity!,
                   widget.reason,
                 );
+                // ignore: use_build_context_synchronously
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
+                  MaterialPageRoute(builder: (context) => const HomePage()),
                 );
                 if (!mounted) return;
                 Phoenix.rebirth(context);

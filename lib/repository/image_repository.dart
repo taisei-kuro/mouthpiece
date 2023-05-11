@@ -19,7 +19,7 @@ class ImageRepository {
         .doc(projectId)
         .collection('photos')
         .doc();
-    final imgId = 'faces/$projectId/${newDoc.id}'; // FIXME:
+    final imgId = 'faces/$projectId/${newDoc.id}';
     final imageUrl = await _uploadImage(image, imgId);
 
     await newDoc.set({

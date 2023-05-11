@@ -48,6 +48,7 @@ class AuthRepository {
   }
 
   String _convertToErrorMessageFromErrorCode(String errorCode) {
+    //↓ログイン機能つけた時に使用する。今のところは匿名認証だから使わない
     switch (errorCode) {
       case 'email-already-exists':
         return '指定されたメールアドレスは既に使用されています。';
