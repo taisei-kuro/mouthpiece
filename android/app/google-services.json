@@ -29,6 +29,13 @@
             {
               "client_id": "482518100871-7g7vnfhpqsi32n8jcuj94ulctk6faspe.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "482518100871-8dutcktk757kc5an8563bt9v3tse2lbe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mouthpiece"
+              }
             }
           ]
         }

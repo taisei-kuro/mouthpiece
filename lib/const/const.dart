@@ -19,6 +19,4 @@ class Const {
       900: mainBlueColor,
     },
   );
-
-  static const fontFamily = 'OntoSerifJP';
 }

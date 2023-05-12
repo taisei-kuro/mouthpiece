@@ -58,6 +58,19 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+    flavorDimensions 'flavor'
+    productFlavors {
+        dev {
+            dimension 'flavor'
+            applicationIdSuffix '.dev'
+            manifestPlaceholders = [appName: '(d)矯正管理']
+        }
+        prod {
+            dimension 'flavor'
+            applicationIdSuffix ''
+            manifestPlaceholders = [appName: '矯正管理']
+        }
+    }
 }
 
 flutter {

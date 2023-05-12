@@ -3,15 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:mouthpiece/const/const.dart';
-import 'package:mouthpiece/firebase_options.dart';
+import 'package:mouthpiece/firebase_options_dev.dart' as dev;
+import 'package:mouthpiece/firebase_options_prod.dart' as prod;
 import 'package:mouthpiece/presentation/home_page.dart';
 import 'package:mouthpiece/repository/auth_repository.dart';
 
+const flavor = String.fromEnvironment('FLAVOR');
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   initializeDateFormatting('ja');
+
+  final firebaseOptions = flavor == 'prod'
+      ? prod.DefaultFirebaseOptions.currentPlatform
+      : dev.DefaultFirebaseOptions.currentPlatform;
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+    options: firebaseOptions,
   );
 
   await AuthRepository().signInAnonymously();
@@ -39,7 +47,6 @@ class _AppState extends State<App> {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Const.mainBlueColorSwatch,
-          fontFamily: Const.fontFamily,
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
               disabledBackgroundColor: Colors.transparent,
@@ -60,12 +67,10 @@ class _AppState extends State<App> {
             ),
             backgroundColor: Colors.white,
             titleTextStyle: TextStyle(
-              fontFamily: Const.fontFamily,
               color: Const.mainBlueColor,
               fontSize: 20,
             ),
             contentTextStyle: TextStyle(
-              fontFamily: Const.fontFamily,
               color: Const.mainBlueColor,
             ),
           ),

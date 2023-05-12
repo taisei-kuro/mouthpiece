@@ -29,7 +29,7 @@ class _SetQuantityPageState extends State<SetQuantityPage> {
   Widget build(BuildContext context) {
     if (isLoading) {
       return const Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.grey,
         body: Center(
           child: CircularProgressIndicator(),
         ),
