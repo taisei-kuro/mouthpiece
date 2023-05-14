@@ -101,59 +101,78 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(width: 8),
               ],
             ),
-            body: Center(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 150,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Const.mainBlueColor,
-                          width: 3,
+            body: Container(
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                image: AssetImage('assets/マウスピース.jpg'),
+                fit: BoxFit.cover,
+              )),
+              child: Center(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 150,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Const.mainBlueColor,
+                            width: 3,
+                          ),
+                        ),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  const Text(
+                                    '理由：',
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Flexible(
+                                    child: Text(
+                                      project.reason!,
+                                      style: const TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  const Text(
+                                    '経過日数：',
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Text(
+                                    '${project.currentElapsedDays}日 / ${project.quantity! * 7} 日',
+                                    style: const TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
                         ),
                       ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              children: [
-                                const Text(
-                                  '理由：',
-                                  style: TextStyle(fontSize: 25),
-                                ),
-                                Flexible(
-                                  child: Text(
-                                    project.reason!,
-                                    style: const TextStyle(fontSize: 20),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              children: [
-                                const Text(
-                                  '日数：',
-                                  style: TextStyle(fontSize: 25),
-                                ),
-                                Text(
-                                  '${project.currentElapsedDays}日 / ${project.quantity! * 7} 日',
-                                  style: const TextStyle(fontSize: 20),
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
