@@ -1,6 +1,6 @@
-# mouthpiece
+# 矯正管理
 
-A new Flutter project.
+マウスピース矯正の経過日数および歯列の変化を写真に記録することができるアプリです。
 
 ## Getting Started
 
