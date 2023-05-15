@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
+            VALUE "CompanyName", "com.taisei" "\0"
             VALUE "FileDescription", "mouthpiece" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "mouthpiece" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2023 com.taisei. All rights reserved." "\0"
             VALUE "OriginalFilename", "mouthpiece.exe" "\0"
             VALUE "ProductName", "mouthpiece" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"

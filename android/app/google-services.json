@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:482518100871:android:236e535ac4a72c5e704122",
         "android_client_info": {
-          "package_name": "com.example.mouthpiece"
+          "package_name": "com.taisei.mouthpiece"
         }
       },
       "oauth_client": [
@@ -34,7 +34,7 @@
               "client_id": "482518100871-8dutcktk757kc5an8563bt9v3tse2lbe.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.mouthpiece"
+                "bundle_id": "com.taisei.mouthpiece"
               }
             }
           ]

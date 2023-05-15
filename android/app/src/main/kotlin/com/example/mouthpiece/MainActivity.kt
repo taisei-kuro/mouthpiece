@@ -1,4 +1,4 @@
-package com.example.mouthpiece
+package com.taisei.mouthpiece
 
 import io.flutter.embedding.android.FlutterActivity
 

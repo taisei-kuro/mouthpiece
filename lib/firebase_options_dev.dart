@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '482518100871',
     projectId: 'mouthpiece-dev-44600',
     storageBucket: 'mouthpiece-dev-44600.appspot.com',
-    iosClientId: '482518100871-8dutcktk757kc5an8563bt9v3tse2lbe.apps.googleusercontent.com',
-    iosBundleId: 'com.example.mouthpiece',
+    iosClientId:
+        '482518100871-8dutcktk757kc5an8563bt9v3tse2lbe.apps.googleusercontent.com',
+    iosBundleId: 'com.taisei.mouthpiece',
   );
 }
