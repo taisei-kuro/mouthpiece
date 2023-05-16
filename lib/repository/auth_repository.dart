@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 class AuthRepository {
   String get userId {
     final uid = FirebaseAuth.instance.currentUser?.uid;
+    assert(uid != null, 'currentUserがnullです');
     return uid!;
   }
 

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_phoenix/flutter_phoenix.dart';
+import 'package:flutter/services.dart';
 import 'package:mouthpiece/common/dialog.dart';
 import 'package:mouthpiece/common/setting_menu_item.dart';
 import 'package:mouthpiece/const/const.dart';
+import 'package:mouthpiece/presentation/home_page.dart';
 import 'package:mouthpiece/repository/auth_repository.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -84,7 +85,6 @@ Future _showConfirmResignDialog(BuildContext context) {
         ),
         onPressedYes: () async {
           await AuthRepository().deleteUser();
-
           if (context.mounted) {
             Navigator.of(context).pop();
             await showDialog(
@@ -92,9 +92,14 @@ Future _showConfirmResignDialog(BuildContext context) {
               builder: (_) {
                 return OKDialog(
                   title: '退会が完了しました。',
-                  onPressedOK: () async {
-                    Navigator.of(context).pop();
-                    Phoenix.rebirth(context);
+                  onPressedOK: () {
+                    SystemNavigator.pop();
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => const HomePage(),
+                    //   ),
+                    // );
                   },
                 );
               },

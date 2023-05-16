@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> init() async {
     try {
+      await AuthRepository().signInAnonymously();
       final project = await repo.fetchProject();
       setState(() {
         this.project = project;
