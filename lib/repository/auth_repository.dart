@@ -16,7 +16,7 @@ class AuthRepository {
       try {
         // 匿名認証
         final userCredential = await firebaseAuthInstance.signInAnonymously();
-        // firestoreにUserを登録する
+        // firestoreにUserを登録
         final user = userCredential.user;
         if (user != null) {
           final uid = user.uid;
